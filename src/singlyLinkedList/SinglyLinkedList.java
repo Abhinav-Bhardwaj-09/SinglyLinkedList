@@ -12,6 +12,12 @@ import node.Node;
 public class SinglyLinkedList {
     private Node head;
 
+    public void insertAtStart(int data) {
+        Node newNode = new Node(data);
+        newNode.setNext(head);
+        head = newNode;
+    }
+
     public void insertAtEnd( int data) {
         Node newNode = new Node(data);
         if(head.getNext() == null) {

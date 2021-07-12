@@ -52,6 +52,10 @@ public class SinglyLinkedList {
     }
 
     public void delete(int position){
+        if(head == null) {
+            System.out.println("LinkedList is already empty.");
+            return;
+        }
         if(position == 1){
             head = head.getNext();
         }

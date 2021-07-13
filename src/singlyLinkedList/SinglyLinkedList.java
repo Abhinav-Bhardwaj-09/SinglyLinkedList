@@ -52,6 +52,7 @@ public class SinglyLinkedList {
     }
 
     public void delete(int position){
+
         if(head == null) {
             System.out.println("LinkedList is already empty.");
             return;
@@ -62,11 +63,12 @@ public class SinglyLinkedList {
         else {
             Node previous = head;
             int count = 1;
-            while(count < position-1){
+            while(count < position-1) {
                 previous = previous.getNext();
                 count++;
             }
             Node current = previous.getNext();
+            System.out.println(current.getData() + " is deleted from the LinkedList.");
             previous.setNext(current.getNext());
         }
     }
@@ -91,7 +93,7 @@ public class SinglyLinkedList {
             System.out.print(temp.getData() + " --> ");
             temp = temp.getNext();
         }
-        System.out.print("null");
+        System.out.println("null");
     }
 
 }

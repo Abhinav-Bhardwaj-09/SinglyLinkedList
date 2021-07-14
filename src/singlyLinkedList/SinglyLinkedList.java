@@ -65,6 +65,17 @@ public class SinglyLinkedList {
 
     }
 
+    public Node middleOfLinkedList () {
+        Node middleNode = head;
+        Node FastPtr = head;
+        while (FastPtr != null && FastPtr.getNext() != null) {
+            middleNode = middleNode.getNext();
+            FastPtr = FastPtr.getNext().getNext();
+        }
+
+        return middleNode;
+    }
+
     public int search(int searchData) {
         if(head == null) {
             System.out.println("LinkedList is already empty.");

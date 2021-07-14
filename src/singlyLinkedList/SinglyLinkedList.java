@@ -65,7 +65,7 @@ public class SinglyLinkedList {
 
     }
 
-    public Node middleOfLinkedList () {
+    public int middleOfLinkedList () {
         Node middleNode = head;
         Node FastPtr = head;
         while (FastPtr != null && FastPtr.getNext() != null) {
@@ -73,8 +73,10 @@ public class SinglyLinkedList {
             FastPtr = FastPtr.getNext().getNext();
         }
 
-        return middleNode;
+        return middleNode.getData();
     }
+
+
 
     public int search(int searchData) {
         if(head == null) {

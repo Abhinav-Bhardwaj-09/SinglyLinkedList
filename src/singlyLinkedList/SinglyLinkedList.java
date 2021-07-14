@@ -51,6 +51,37 @@ public class SinglyLinkedList {
         }
     }
 
+    public Node reverseLinkedList () {
+        Node current = head;
+        Node newHead = null;
+        Node next = null;
+        while (current != null) {
+            next = current.getNext();
+            current.setNext(newHead);
+            newHead = current;
+            current = next;
+        }
+        return newHead;
+
+    }
+
+    public int search(int searchData) {
+        if(head == null) {
+            System.out.println("LinkedList is already empty.");
+            return -1;
+        }
+        int count = 1;
+        Node current = head;
+        while(current != null) {
+            if(current.getData() == searchData) {
+                return count;
+            }
+            count++;
+            current = current.getNext();
+        }
+        return -1;
+    }
+
     public void delete(int position){
 
         if(head == null) {
